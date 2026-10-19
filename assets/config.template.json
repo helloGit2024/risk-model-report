@@ -1,0 +1,32 @@
+{
+  "_说明": "报告配置模板。复制后改列名即可；未知字段会被忽略，缺失字段取默认值。",
+  "_字段表": {
+    "target": "标签列名，1=坏 0=好",
+    "date": "日期列名（也可在数据里直接给 month 列）",
+    "data_flag": "数据集划分列名，取值 train/test/oot",
+    "channle_name": "渠道列名；数据里没有该列时渠道类 sheet 为空",
+    "other_label_value": "灰样本标签取值（不计入坏账率分母）",
+    "other_y_lst": "其他业务标签（M1/M2/M3），多标签请换 target 多跑几次",
+    "eval_univariate": "是否做单变量分析（关闭可提速约 3 倍）",
+    "bins": "模型分分箱数",
+    "importance_top": "特征分析取前 N 个重要特征",
+    "psi_threshold": "PSI 观察阈值",
+    "psi_alert_threshold": "PSI 告警阈值",
+    "iv_threshold": "IV 入模阈值",
+    "ks_overfit_threshold": "train→test/oot 的 KS 过拟合衰减阈值"
+  },
+
+  "target": "y",
+  "date": "dateback",
+  "data_flag": "data_flag",
+  "channle_name": "channle",
+  "other_label_value": [],
+  "other_y_lst": [],
+  "eval_univariate": true,
+  "bins": 10,
+  "importance_top": 30,
+  "psi_threshold": 0.1,
+  "psi_alert_threshold": 0.25,
+  "iv_threshold": 0.02,
+  "ks_overfit_threshold": 0.05
+}

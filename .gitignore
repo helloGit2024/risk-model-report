@@ -21,3 +21,10 @@ dist/
 # IDE 配置
 .vscode/
 .idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/

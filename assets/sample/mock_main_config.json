@@ -1,0 +1,18 @@
+{
+  "target": "y",
+  "date": "dateback",
+  "data_flag": "data_flag",
+  "channle_name": "channle",
+  "is_channle": true,
+  "eval_univariate": true,
+  "bins": 10,
+  "bins_lst": [
+    10,
+    20
+  ],
+  "importance_top": 26,
+  "model_name": "D05_mock",
+  "keys": [
+    "id"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "default",
+  "font": "微软雅黑",
+  "font_size": 10,
+  "colors": {
+    "green": "#63BE7B",
+    "yellow": "#FFEB84",
+    "red": "#F8696B",
+    "blue": "#638EC6",
+    "light_blue": "#B4C6E7",
+    "orange": "#F4B183",
+    "header_bg": "#4472C4",
+    "header_font": "#FFFFFF",
+    "title_bg": "#D9E1F2"
+  },
+  "thresholds": {
+    "psi_ok": 0.1,
+    "psi_warn": 0.25,
+    "ks_ok": 0.3,
+    "ks_warn": 0.2
+  },
+  "gap_rows": 2,
+  "group_gap": 1,
+  "col_width": 14,
+  "freeze": true,
+  "sheet_order": null,
+  "sheet_include": null
+}

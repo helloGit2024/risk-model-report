@@ -1,0 +1,42 @@
+{
+  "_comment": "批量出报告示例。运行：cd scripts && python generate_report.py --batch ../assets/batch.example.json",
+  "_说明": [
+    "defaults：所有 job 共享的输入与参数（config/model/rnt/wide/importance/top/style/out_dir）",
+    "jobs：每个 job 覆盖 defaults；多标签场景 = 同一个 job 换 target 再跑一次（见 job3）",
+    "out：不给则落到 {out_dir}/{name}.xlsx"
+  ],
+  "defaults": {
+    "config": "../assets/sample/mock_main_config.json",
+    "model": "D05_mock_score",
+    "rnt": "../assets/sample/mock_model_result.csv",
+    "wide": "../assets/sample/mock_wide.csv",
+    "importance": "../assets/sample/mock_feature_importance.csv",
+    "top": 8,
+    "style": "default",
+    "out_dir": "../out/batch"
+  },
+  "jobs": [
+    {
+      "name": "D05_full",
+      "_说明": "完整报告：16 个 sheet + 定版版式"
+    },
+    {
+      "name": "D05_compact",
+      "style": "compact",
+      "top": 5,
+      "_说明": "换模板：字号 9、块间空 1 行、组间不空行"
+    },
+    {
+      "name": "D05_no_feature",
+      "wide": null,
+      "importance": null,
+      "_说明": "输入降级：不给宽表与重要性 → 只出 12 个非特征类 sheet（约 1/3 耗时）"
+    },
+    {
+      "name": "D05_label_M1",
+      "target": "y",
+      "out": "../out/batch/D05_label_M1.xlsx",
+      "_说明": "多标签：换 target 再跑一次（真实场景把 y 换成 y_m1 / y_m2 / y_m3）"
+    }
+  ]
+}

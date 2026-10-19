@@ -1,0 +1,19 @@
+# 风控模型报告 Skill · 依赖清单
+# 安装：pip install -r requirements.txt
+# 自检：python scripts/check_env.py
+# 核心依赖（必需）
+pandas>=1.5,<2.2
+numpy>=1.21
+scikit-learn>=1.0
+xlsxwriter>=3.0        # Excel 写入引擎，数据条/色阶美化依赖（openpyxl 不支持条件格式扩展）
+matplotlib>=3.5
+seaborn>=0.12
+pydantic>=2.0
+openpyxl>=3.0          # 产出验收只读报告用（写入引擎仍是 xlsxwriter）
+
+# 可选依赖
+scorecardpy>=0.1.9     # chimerge/tree 分箱后端；未安装时自动降级为自研等频/决策树分箱
+statsmodels>=0.13      # VIF 共线性计算；未安装时跳过 VIF
+shap>=0.40             # SHAP 特征贡献图；未安装时跳过，不影响报告生成
+lightgbm>=3.3          # 读取模型 feature_name_ / feature_importances_
+scipy>=1.7             # Hosmer-Lemeshow 校准度检验的 p 值计算
